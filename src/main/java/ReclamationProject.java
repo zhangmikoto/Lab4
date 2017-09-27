@@ -7,20 +7,40 @@
  * 4. Add comments and Javadoc comments where needed
  * 5. Remove unnecessary comments as appropriate
  */
-
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/**
+ * This is the whole class.
+ */
+public class ReclamationProject {
+    /**
+     * this is the DOIT function.
+     * @return the answer.
+     * @param aInput a input.
+     * @param bInput b input.
+     */
+    static String doit(final String aInput, final String bInput) {
+        String aInfunc = aInput;
+        String bInfunc = bInput;
+        if (aInfunc.length() > bInfunc.length()) {
+            String cInfunc = aInfunc; // set c to a
+            aInfunc = bInfunc;
+            bInfunc = cInfunc;
+            }
+        String r;
+        if (aInfunc.equals(bInfunc)) {
+            r = "";
+        } else {
+            r = "";
+        }
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
+        for (int i = 0; i < aInfunc.length(); i++) {
+            for (int j = aInfunc.length() - i; j > 0; j--) {
+                for (int k = 0; k < bInfunc.length() - j; k++) {
+                    if (aInfunc.regionMatches(i, bInfunc, k, j) && j > r.length()) {
+                        r = aInfunc.substring(i, i + j);
+                    }
+                        }
+                }
         } return r; }
 }
